@@ -5,7 +5,7 @@ using UnityEngine;
 public class LaserMove : MonoBehaviour
 {
     public float speed = 20.0f;
-
+    public GameObject explosion;
     private Rigidbody2D rBody;
 
     // Start is called before the first frame update
@@ -14,4 +14,10 @@ public class LaserMove : MonoBehaviour
         rBody = GetComponent<Rigidbody2D>();
         rBody.velocity = Vector2.right * speed;
     }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Instantiate(explosion, this.transform.position, this.transform.rotation);
+        Destroy(gameObject);
+    }
+
 }

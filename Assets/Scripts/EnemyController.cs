@@ -55,4 +55,20 @@ public class EnemyController : MonoBehaviour
         currentPosition -= new Vector2(verticalSpeed, horizontalSpeed);
         transform.position = currentPosition;
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Laser")
+        {
+            
+            Reset();
+        }
+
+        if (other.tag == "Player")
+        {
+            Reset();
+        }
+
+
+    }
 }

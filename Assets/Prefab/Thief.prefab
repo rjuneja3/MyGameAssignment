@@ -169,9 +169,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d8a62e6893e784b93dd9086fcdf1fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 7282118247745616681, guid: cd86b794891e84a4e854fb5d9b2daee5,
+  explosion: {fileID: 1676745206225211893, guid: cd86b794891e84a4e854fb5d9b2daee5,
     type: 3}
-  explosionPlayer: {fileID: 7282118247745616681, guid: cd86b794891e84a4e854fb5d9b2daee5,
+  explosionPlayer: {fileID: 1676745206225211893, guid: cd86b794891e84a4e854fb5d9b2daee5,
     type: 3}
   gameController: {fileID: 8121368602154733105, guid: 20f8bb9f0becfad4aa1d7e2865f590ea,
     type: 3}

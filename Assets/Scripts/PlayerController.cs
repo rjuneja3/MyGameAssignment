@@ -11,13 +11,14 @@ public class PlayerController : MonoBehaviour
     public GameController gameController;
 
     public GameObject laser;
+    public Transform laserSpawn;
     public float fireRate = 0.5f;
 
     private float counter = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -27,8 +28,9 @@ public class PlayerController : MonoBehaviour
         counter += Time.deltaTime;
         if (Input.GetButton("Fire1") && counter > fireRate)
         {
+            Debug.Log("Fire 1 working");
             // Create my laser object
-            Instantiate(laser);
+            Instantiate(laser, laserSpawn.position, laser.transform.rotation);
             counter = 0.0f;
         }
     }
