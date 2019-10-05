@@ -14,6 +14,10 @@ namespace Util
         public int NumberOfThieves;
         public List<GameObject> thieves;
 
+        [Header("Audio Sources")]
+        public SoundClip activeSoundClip;
+        public AudioSource[] audioSources;
+
         // Start is called before the first frame update
         void Start()
         {

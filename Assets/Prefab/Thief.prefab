@@ -110,6 +110,8 @@ MonoBehaviour:
   ThiefOffset: 3
   verticalSpeed: 0
   horizontalSpeed: 0
+  gameController: {fileID: 8121368602154733105, guid: 20f8bb9f0becfad4aa1d7e2865f590ea,
+    type: 3}
 --- !u!61 &6074287835883422504
 BoxCollider2D:
   m_ObjectHideFlags: 0

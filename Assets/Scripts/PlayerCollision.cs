@@ -6,9 +6,12 @@ public class PlayerCollision : MonoBehaviour
 {
     public GameObject explosion;
     public GameObject explosionPlayer;
-    public GameController gameController;
-
-
+ 
+   
+    void Start()
+    {
+        
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
@@ -17,6 +20,7 @@ public class PlayerCollision : MonoBehaviour
             GameObject temp = Instantiate(explosionPlayer, collision.transform.position, collision.transform.rotation);
             Destroy(temp, 2.0f);
             Destroy(collision.gameObject);
+           
         }
         if (collision.tag == "Laser")
         {

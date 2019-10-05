@@ -585,11 +585,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameController
       objectReference: {fileID: 0}
-    - target: {fileID: 8121368602154733105, guid: 20f8bb9f0becfad4aa1d7e2865f590ea,
-        type: 3}
-      propertyPath: NumberOfThieves
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6523843808319518677, guid: 20f8bb9f0becfad4aa1d7e2865f590ea,
         type: 3}
       propertyPath: m_LocalPosition.x

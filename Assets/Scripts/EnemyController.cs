@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour
 
     public float verticalSpeed;
     public float horizontalSpeed;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +58,7 @@ public class EnemyController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+       
         if (other.tag == "Laser")
         {
             
@@ -66,6 +67,7 @@ public class EnemyController : MonoBehaviour
 
         if (other.tag == "Player")
         {
+          
             Reset();
         }
 

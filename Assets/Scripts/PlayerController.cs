@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public GameObject laser;
     public Transform laserSpawn;
     public float fireRate = 0.5f;
-
+    private AudioSource _laserSound ;
     private float counter = 0.0f;
     // Start is called before the first frame update
     void Start()
@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton("Fire1") && counter > fireRate)
         {
             Debug.Log("Fire 1 working");
+            _laserSound = gameController.audioSources[(int)SoundClip.LASER];
+            _laserSound.Play();
             // Create my laser object
             Instantiate(laser, laserSpawn.position, laser.transform.rotation);
             counter = 0.0f;
