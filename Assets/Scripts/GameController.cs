@@ -17,8 +17,9 @@ namespace Util
         // Start is called before the first frame update
         void Start()
         {
-             for (int cloudNum = 0; cloudNum < NumberOfThieves; cloudNum++)
+             for (int thiefNum = 0; thiefNum < NumberOfThieves; thiefNum++)
             {
+                Debug.Log("Loaded");
                 thieves.Add(Instantiate(thief));
             }
         }
