@@ -14,20 +14,16 @@ public class PlayerCollision : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        // If the player collides with enemies, then player gets killed.
         if (collision.tag == "Player")
         {
+            // instantiates explosion
             GameObject temp = Instantiate(explosionPlayer, collision.transform.position, collision.transform.rotation);
             Destroy(temp, 2.0f);
+            //destroys player
             Destroy(collision.gameObject);
            
-        }
-        if (collision.tag == "Laser")
-        {
-            
-        }
-      
-       
+        }    
 
     }
    

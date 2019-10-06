@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 namespace Util
+    
 {
     [System.Serializable]
     public class GameController : MonoBehaviour
@@ -18,20 +21,69 @@ namespace Util
         public SoundClip activeSoundClip;
         public AudioSource[] audioSources;
 
-        // Start is called before the first frame update
-        void Start()
+        [Header("Scoreboard")]
+        [SerializeField]
+        private int _lives;
+
+        [SerializeField]
+        private int _score;
+
+        [Header("Labels")]
+        public Text livesLabel;
+        public Text scoreLabel;
+        //Sets the value of live on screen.
+        public int Lives
         {
-             for (int thiefNum = 0; thiefNum < NumberOfThieves; thiefNum++)
+            get
             {
-                Debug.Log("Loaded");
-                thieves.Add(Instantiate(thief));
+                return _lives;
+            }
+
+            set
+            {
+                _lives = value;
+                if (_lives < 1)
+                {
+
+                    SceneManager.LoadScene("Main");
+                }
+                else
+                {
+                    livesLabel.text = "Lives: " + _lives.ToString();
+                }
+
+            }
+        }
+        //set the valus of score on screen
+        public int Score
+        {
+            get
+            {
+                return _score;
+            }
+
+            set
+            {
+                _score = value;
+
+                scoreLabel.text = "Score: " + _score.ToString();
+
+
             }
         }
 
-        // Update is called once per frame
-        void Update()
+        // first function that runs on startup
+        void Start()
         {
-
+            // values initialized
+            Lives = 5;
+            Score = 0;
+        
+            // Enemies spawn code 
+            for (int thiefNum = 0; thiefNum < NumberOfThieves; thiefNum++)
+            {
+                thieves.Add(Instantiate(thief));
+            }
         }
     }
 }

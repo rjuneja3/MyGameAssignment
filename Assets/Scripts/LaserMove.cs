@@ -15,7 +15,9 @@ public class LaserMove : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
+        // Instantiates explosion animation
         Instantiate(explosion, this.transform.position, this.transform.rotation);
+        //destroys laser
         Destroy(gameObject);
     }
 
